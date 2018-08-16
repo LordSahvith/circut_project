@@ -5,14 +5,15 @@ html, body {
 }
 
 .hero {
-    background-color: #ddd;
+    background: #ddd url(../img/IMG-6471.JPG) center center no-repeat;
     margin-top: 60px;
     height: 50vh;
 }
 
 .hero-title {
     text-align: center;
-    padding-top: 20vh;
+    padding-top: 15vh;
+    font-size: 1.2rem;
 }
 
 .about {
@@ -22,4 +23,19 @@ html, body {
 
 .about h2 {
     padding-bottom: 40px;
+}
+
+.info-box {
+    padding: 20px 20px 0;
+}
+
+.info-box h3,
+.info-box p {
+    background-color: #eee;
+    padding: 20px 15px;
+}
+
+.info-box h3 {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
