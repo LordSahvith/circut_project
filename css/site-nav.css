@@ -1,0 +1,189 @@
+.nav-bar {
+    background-color: #ccc;
+    padding: 5px 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo img {
+    position: relative;
+    height: 50px;
+    transition: all .3s;
+    z-index: 15;
+}
+
+.logo img:hover {
+    transform: scale(0.95);
+    cursor: pointer;
+}
+
+.main-nav {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #444;
+    padding-right: 25px;
+    font-size: 1.3rem;
+    transition: all .2s;
+    
+}
+
+.nav-link:last-child {
+    padding-right: 0;
+}
+
+.nav-link:hover {
+    color: #da1d1d;
+    cursor: pointer;
+}
+
+/* ===== MOBILE HAMBURGER ICON ============ */
+
+.mobile-icon, .menu-icon {
+    position: relative;
+    transition: all .4s;
+}
+
+.toggle-button {
+    position: fixed;
+    width: 44px;
+    height: 40px;
+    top: 19px;
+    right: 25px;
+    padding: 4px;
+    transition: .25s;
+    z-index: 15;
+}
+
+.toggle-button:hover {
+    cursor: pointer;
+}
+
+.mobile-icon:hover .menu-bar {      
+    background-color: #c61a1a;
+}
+
+.toggle-button .menu-bar {
+    position: absolute;
+    border-radius: 2px;
+    height: 4px;
+    width: 42px;
+    background-color: #333;
+    transition: .5s;
+}
+
+.toggle-button .menu-bar-top {
+    border-bottom: none;
+    top: 0;
+}
+
+.toggle-button .menu-bar-middle {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    top: 4px;
+}
+
+.toggle-button .menu-bar-bottom {
+    border-top: none;
+    top: 22px;
+}
+
+.button-open .menu-bar-top {
+    transform: rotate(45deg) translate(8px, 8px);
+    transition: .5s;
+}
+
+.button-open .menu-bar-middle {
+    transform: translateY(200%);
+    transition: .1s ease-in;
+    opacity: 0;
+}
+
+.button-open .menu-bar-bottom {
+    transform: rotate(-45deg) translate(8px, -7px);
+    transition: .5s;
+}
+
+.overlay {  
+    height: 100%;
+    width: 0;
+    position: fixed; 
+    top: 60px;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0,0,0, 0.7); 
+    overflow-x: hidden; 
+    transition: 0.5s; 
+}
+
+.overlay-content  {
+    position: relative;
+    top: 20%; 
+    width: auto; 
+    text-align: center; 
+    z-index: 10;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 2.2rem;
+    color: #FFF;
+    display: block; 
+    transition: 0.3s; 
+}
+
+.overlay .overlay-content button {
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #c61a1a;
+}
+
+.overlay .overlay-content .closebtn {
+    position: absolute;
+    right: 28px;
+    top: 25%;
+    font-size: 60px;
+}
+
+a.sub-class {
+    font-size: 2rem;
+    text-indent: 50px;
+}
+
+@media screen and (min-width: 960px) {
+    .mobile-icon {
+        opacity: 0;
+        transition: all .4s;
+        pointer-events: none;
+    }
+    
+    .overlay {
+        position: absolute;
+        background-color: #ddd;
+        width: auto;
+        overflow-y: hidden;
+        top: 0;
+        right: 0;
+    }
+    
+    .overlay a {
+        display: inline-block;
+        color: #444;
+        padding-right: 25px;
+        font-size: 1.3rem;
+        transition: all .2s;
+    }
+}
+
