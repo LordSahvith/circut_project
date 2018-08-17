@@ -6,6 +6,7 @@
 * {
     box-sizing: border-box;
 }
+
 html, body {
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 16px;
@@ -16,7 +17,7 @@ html, body {
     background: #ddd url(../img/IMG-6471.JPG) center center no-repeat;
     background-size: cover;
     margin-top: 60px;
-    height: 50vh;
+    height: 70vh;
 }
 
 .hero-title {

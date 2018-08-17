@@ -1,14 +1,14 @@
 var canvas, canvasContext;
 
-var ballX      = 75;
-var ballY      = 75;
+var ballX      = 150;
+var ballY      = 270;
 var ballSpeedX = 5;
 var ballSpeedY = 7;
 
 var paddleX                 = 400;
 const PADDLE_WIDTH          = 100;
 const PADDLE_THICKNESS      = 10;
-const PADDLE_DIST_FROM_EDGE = 60;
+const PADDLE_DIST_FROM_EDGE = 20;
 
 var mouseX, mouseY;
 
