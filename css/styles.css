@@ -22,7 +22,7 @@ li {
 }
 
 .hero-img {
-    background: #ccc url(../img/hero-3.JPG) 50% 0 repeat fixed;
+    background: #ccc url(../img/hero-3.JPG) 50% 0 no-repeat fixed;
     background-size: cover;
     margin-top: 60px;
     height: 100vh;
@@ -35,7 +35,7 @@ li {
 }
 
 .about {
-    background: url(../img/spiderman-3.jpg) 50% 0 repeat fixed;
+    background: url(../img/spiderman-3.jpg) 50% 0 no-repeat fixed;
     background-size: cover;
     padding: 40px 0;
     text-align: center;
