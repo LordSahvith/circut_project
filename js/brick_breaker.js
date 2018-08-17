@@ -19,8 +19,7 @@ const BRICK_COLS = 10;
 const BRICK_ROWS = 7; // temp halved
 var brickGrid = new Array(BRICK_COLS * BRICK_ROWS);
 
-function updateMousePos(evt) 
-{
+function updateMousePos(evt) {
     var rect = canvas.getBoundingClientRect();
     var root = document.documentElement;
 
@@ -30,16 +29,14 @@ function updateMousePos(evt)
     paddleX = mouseX - (PADDLE_WIDTH / 2);
 }
 
-function brickReset() 
-{
+function brickReset() {
     for(var i = 0; i < BRICK_COLS * BRICK_ROWS; i++) 
     {
         brickGrid[i] = true;
     }
 }
 
-window.onload = function() 
-{
+window.onload = function() {
     canvas = document.getElementById('gameCanvas');
     canvasContext = canvas.getContext('2d');
 
@@ -51,46 +48,38 @@ window.onload = function()
     brickReset();
 }
 
-function updateAll() 
-{
+function updateAll() {
     moveAll();
     drawAll();
 }
 
-function ballReset() 
-{
+function ballReset() {
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
 }
 
-function ballMove() 
-{
+function ballMove() {
     ballX += ballSpeedX;
     ballY += ballSpeedY;
 
     // ball horizontal travel
-    if(ballX < 0) 
-    { // left side
+    if(ballX < 0) { // left side
         ballSpeedX *= -1;
     }
-    if(ballX > canvas.width) 
-    { // right side
+    if(ballX > canvas.width) { // right side
         ballSpeedX *= -1;
     }            
 
     // ball vertical travel            
-    if(ballY < 0) 
-    { // top
+    if(ballY < 0) { // top
         ballSpeedY *= -1;
     }
-    if(ballY > canvas.height) 
-    { // bottom
+    if(ballY > canvas.height) { // bottom
         ballReset();
     } 
 }
 
-function ballPaddleHandling() 
-{
+function ballPaddleHandling() {
     var paddleTopEdgeY = canvas.height - PADDLE_DIST_FROM_EDGE;
     var paddleBottomEdgeY = paddleTopEdgeY + PADDLE_THICKNESS;
     var paddleLeftEdgeX = paddleX;
@@ -99,25 +88,22 @@ function ballPaddleHandling()
     if(ballY > paddleTopEdgeY && // below the top of paddle 
        ballY < paddleBottomEdgeY && // above bottom of paddle
        ballX > paddleLeftEdgeX && // right of the left side of paddle
-       ballX < paddleRightEdgeX) // left of the right side of paddle
-    { 
-        ballSpeedY *= -1;
+       ballX < paddleRightEdgeX) {// left of the right side of paddle
+            ballSpeedY *= -1;
 
-        var centerOfPaddleX = paddleX + PADDLE_WIDTH / 2;
-        var ballDistFromPaddleCenterX = ballX - centerOfPaddleX;
-        ballSpeedX = ballDistFromPaddleCenterX * 0.35;
+            var centerOfPaddleX = paddleX + PADDLE_WIDTH / 2;
+            var ballDistFromPaddleCenterX = ballX - centerOfPaddleX;
+            ballSpeedX = ballDistFromPaddleCenterX * 0.35;
     }
 }
 
-function ballBrickHandling() 
-{
+function ballBrickHandling() {
     var ballBrickCol = Math.floor(ballX / BRICK_W);
     var ballBrickRow = Math.floor(ballY / BRICK_H);
     var brickIndexUnderBall = rowColToArrayIndex(ballBrickCol, ballBrickRow);
 
     if(ballBrickCol >= 0 && ballBrickCol < BRICK_COLS &&
-       ballBrickRow >= 0 && ballBrickRow < BRICK_ROWS) 
-    {
+       ballBrickRow >= 0 && ballBrickRow < BRICK_ROWS) {
         if(brickGrid[brickIndexUnderBall]) {
             brickGrid[brickIndexUnderBall] = false;
 
@@ -128,30 +114,25 @@ function ballBrickHandling()
 
             var bothTestsFailed = true;
 
-            if(prevBrickCol != ballBrickCol) 
-            {
+            if(prevBrickCol != ballBrickCol) {
                 var adjBrickSide = rowColToArrayIndex(prevBrickCol, ballBrickRow);
 
-                if(brickGrid[adjBrickSide] == false) 
-                {
+                if(brickGrid[adjBrickSide] == false) {
                     ballSpeedX *= -1;
                     bothTestsFailed = false;
                 }
             }
 
-            if(prevBrickRow != ballBrickRow) 
-            {
+            if(prevBrickRow != ballBrickRow) {
                 var adjBrickTopBot = rowColToArrayIndex(ballBrickCol, prevBrickRow);
 
-                if(brickGrid[adjBrickTopBot] == false)
-                {
+                if(brickGrid[adjBrickTopBot] == false) {
                     ballSpeedY *= -1; 
                     bothTestsFailed = false;
                 }
             }
 
-            if(bothTestsFailed) 
-            {
+            if(bothTestsFailed) {
                 ballSpeedX *= -1;
                 ballSpeedY *= -1;
             }                    
@@ -159,8 +140,7 @@ function ballBrickHandling()
     } // end of col and row
 }
 
-function moveAll() 
-{ 
+function moveAll() { 
     ballMove();
 
     ballBrickHandling();
@@ -168,28 +148,22 @@ function moveAll()
     ballPaddleHandling();
 }
 
-function rowColToArrayIndex(col, row) 
-{
+function rowColToArrayIndex(col, row) {
     return col + BRICK_COLS * row;
 }
 
-function drawBricks() 
-{            
-    for(var eachRow = 0; eachRow < BRICK_ROWS; eachRow++) 
-    {
-        for(var eachCol = 0; eachCol < BRICK_COLS; eachCol++) 
-        {
+function drawBricks() {            
+    for(var eachRow = 0; eachRow < BRICK_ROWS; eachRow++) {
+        for(var eachCol = 0; eachCol < BRICK_COLS; eachCol++) {
             var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
-            if(brickGrid[arrayIndex]) 
-            {
-                colorRect(BRICK_W * eachCol, BRICK_H * eachRow, BRICK_W - BRICK_GAP, BRICK_H - BRICK_GAP, 'blue');
+            if(brickGrid[arrayIndex]) {
+                colorRect(BRICK_W * eachCol, BRICK_H * eachRow, BRICK_W - BRICK_GAP, BRICK_H - BRICK_GAP, 'red');
             }
         }
     } // for loop row
 }
 
-function drawAll() 
-{   
+function drawAll() {   
     // draw/clear screen
     colorRect(0, 0, canvas.width, canvas.height, 'black');
 
@@ -202,22 +176,19 @@ function drawAll()
     drawBricks();
 }
 
-function colorRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColor) 
-{
+function colorRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColor) {
     canvasContext.fillStyle = fillColor;
     canvasContext.fillRect(topLeftX, topLeftY, boxWidth, boxHeight);
 }
 
-function colorCircle(centerX, centerY, radius, fillColor) 
-{
+function colorCircle(centerX, centerY, radius, fillColor) {
     canvasContext.fillStyle = fillColor;
     canvasContext.beginPath();
     canvasContext.arc(centerX, centerY, radius, 0, Math.PI * 2, true);
     canvasContext.fill();
 }
 
-function colorText(showWords, textX, textY, fillColor) 
-{
+function colorText(showWords, textX, textY, fillColor) {
     canvasContext.fillStyle = fillColor;
     canvasContext.fillText(showWords, textX, textY);
 }

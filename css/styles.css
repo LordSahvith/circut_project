@@ -1,3 +1,11 @@
+/*
+    dark red: #c61a1a rgb(198, 26, 26)
+    light red: #da1d1d rgb(218, 29, 29)
+*/
+
+* {
+    box-sizing: border-box;
+}
 html, body {
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 16px;
@@ -23,7 +31,7 @@ html, body {
 }
 
 .about h2 {
-    padding-bottom: 10px;
+/*    padding-bottom: 10px;*/
 }
 
 .info-box {
@@ -39,3 +47,45 @@ html, body {
     margin-bottom: 0;
     padding-bottom: 0;
 }
+
+
+.info-item {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.info-image {
+    height: 300px;
+    padding-top: 25px;
+    transition: all .4s;
+}
+
+.img-description {
+    position: absolute;
+    background-color: rgba(218, 29, 29, .8);
+    color: #fff;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    transform: translateY(100%);
+    transition: all .8s;
+    padding-bottom: 10px;
+}
+
+.img-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.info-item-sm {    
+    height: 350px;
+    width: 300px;
+    margin: 20px auto;
+}
+
+.info-item:hover .img-description {
+    opacity: 1;
+    transform: translateY(0);
+} 
