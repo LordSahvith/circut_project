@@ -118,6 +118,6 @@ li {
 /* BATARANG ANIMATION */
 @keyframes batarangThrow {    
     100% {
-        transform: translateX(340%) rotate(360deg);
+        transform: translateX(340%) rotate(740deg);
     }    
 }
