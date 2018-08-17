@@ -14,7 +14,11 @@ html, body {
 }
 
 .hero {
-    background: #ddd url(../img/IMG-6471.JPG) center center no-repeat;
+    background-color: #ccc;
+}
+
+.hero-img {
+    background: #ccc url(../img/IMG-6471.JPG) center center no-repeat;
     background-size: cover;
     margin-top: 60px;
     height: 100vh;
