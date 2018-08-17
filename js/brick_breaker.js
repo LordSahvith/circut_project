@@ -6,15 +6,15 @@ var ballSpeedX = 5;
 var ballSpeedY = 7;
 
 var paddleX                 = 400;
-const PADDLE_WIDTH          = 100;
+const PADDLE_WIDTH          = 75;
 const PADDLE_THICKNESS      = 10;
 const PADDLE_DIST_FROM_EDGE = 20;
 
 var mouseX, mouseY;
 
 const BRICK_GAP = 2;
-const BRICK_W = 80;
-const BRICK_H = 40; // temp double
+const BRICK_W = 50;
+const BRICK_H = 25; // temp double
 const BRICK_COLS = 10;
 const BRICK_ROWS = 7; // temp halved
 var brickGrid = new Array(BRICK_COLS * BRICK_ROWS);
