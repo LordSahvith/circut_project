@@ -31,7 +31,7 @@ li {
 }
 
 .hero-img {
-    background: #ccc url(../img/hero.JPG) 50% 0 no-repeat fixed;
+    background: #ccc url('../img/hero.JPG') 50% 0 no-repeat fixed;
     background-size: cover;
     margin-top: 60px;
     height: 100vh;
