@@ -15,7 +15,7 @@ var mouseX, mouseY;
 const BRICK_GAP = 2;
 const BRICK_W = 50;
 const BRICK_H = 25; // temp double
-const BRICK_COLS = 10;
+const BRICK_COLS = 5;
 const BRICK_ROWS = 7; // temp halved
 var brickGrid = new Array(BRICK_COLS * BRICK_ROWS);
 
