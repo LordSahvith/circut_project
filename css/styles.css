@@ -94,3 +94,26 @@ html, body {
     opacity: 1;
     transform: translateY(0);
 } 
+
+.thanks {
+    background-color: #f3f2f0;
+    padding: 30px;
+}
+
+.thanks h3 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.batarang {
+    width: 20vw;
+    animation: batarangThrow 2s infinite alternate forwards;
+    padding-bottom: 50px;
+}
+
+/* BATARANG ANIMATION */
+@keyframes batarangThrow {    
+    100% {
+        transform: translateX(340%) rotate(360deg);
+    }    
+}
