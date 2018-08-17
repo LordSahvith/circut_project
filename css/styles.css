@@ -6,6 +6,7 @@ html, body {
 
 .hero {
     background: #ddd url(../img/IMG-6471.JPG) center center no-repeat;
+    background-size: cover;
     margin-top: 60px;
     height: 50vh;
 }
@@ -22,7 +23,7 @@ html, body {
 }
 
 .about h2 {
-    padding-bottom: 40px;
+    padding-bottom: 10px;
 }
 
 .info-box {
@@ -31,7 +32,6 @@ html, body {
 
 .info-box h3,
 .info-box p {
-    background-color: #eee;
     padding: 20px 15px;
 }
 
