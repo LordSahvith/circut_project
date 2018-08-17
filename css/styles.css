@@ -13,6 +13,15 @@ html, body {
     color: #222;
 }
 
+a {
+    color: black;
+}
+
+a:hover {
+    color: #c61a1a;
+    text-decoration: none;
+}
+
 li {
     list-style: none;
 }
@@ -22,7 +31,7 @@ li {
 }
 
 .hero-img {
-    background: #ccc url(../img/hero-3.JPG) 50% 0 no-repeat fixed;
+    background: #ccc url(../img/hero.JPG) 50% 0 no-repeat fixed;
     background-size: cover;
     margin-top: 60px;
     height: 100vh;
@@ -35,7 +44,7 @@ li {
 }
 
 .about {
-    background: url(../img/spiderman-3.jpg) 50% 0 no-repeat fixed;
+    background: url(../img/spiderman.jpg) 50% 0 no-repeat fixed;
     background-size: cover;
     padding: 40px 0;
     text-align: center;
@@ -120,6 +129,15 @@ li {
     width: 20vw;
     animation: batarangThrow 2s infinite alternate forwards;
     padding-bottom: 50px;
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 15px;
 }
 
 /* BATARANG ANIMATION */
