@@ -7,7 +7,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: #222;
@@ -104,7 +105,7 @@ li {
     font-weight: 600;
 }
 
-.info-item-sm {    
+.info-item-sm {
     height: 350px;
     width: 300px;
     margin: 20px auto;
@@ -113,7 +114,7 @@ li {
 .info-item:hover .img-description {
     opacity: 1;
     transform: translateY(0);
-} 
+}
 
 .thanks {
     background-color: #f3f2f0;
@@ -141,8 +142,9 @@ footer p {
 }
 
 /* BATARANG ANIMATION */
-@keyframes batarangThrow {    
+
+@keyframes batarangThrow {
     100% {
         transform: translateX(340%) rotate(740deg);
-    }    
+    }
 }
